@@ -1,0 +1,30 @@
+<main>
+  <div class="main-content mat-elevation-z2">
+    <h2>{{ subTitle }}</h2>
+    <section class="section-id">
+      <h3>Identificação</h3>
+      <p>{{ name }}</p>
+      <p>RA {{ ra }}</p>
+      <p *ngFor="let git of gits">
+        <a href="{{ git.link }}" target="_blank">
+          <span>{{ git.label }}</span>
+          <mat-icon aria-hidden="false" aria-label="">launch</mat-icon>
+        </a>
+      </p>
+    </section>
+    <section class="section-classes">
+      <h3>Aulas</h3>
+      <table class="mat-elevation-z4">
+        <tbody>
+          <tr *ngFor="let discipline of discipline.disciplines">
+            <mat-divider></mat-divider>
+            <td>{{ discipline.weekday }}</td>
+            <td>{{ discipline.time }}</td>
+            <td>{{ discipline.discipline }}</td>
+            <mat-divider></mat-divider>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
