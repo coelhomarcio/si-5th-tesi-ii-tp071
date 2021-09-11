@@ -48,40 +48,41 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 
-  div.main-container {
+  main {
     padding: 2rem;
 
-    main {
+    div.main-content {
       border-radius: .5rem;
       padding: 2rem;
-      box-shadow: 0 0 .25rem #121212;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 2rem;
 
-      div.main-content {
-        display: flex;
-        flex-direction: column;
-        grid-gap: 2rem;
+      h2,
+      section > h3 {
+        font-weight: 700;
+        text-transform: uppercase;
+        text-indent: 9%;
+        letter-spacing: .1rem;
+      }
 
-        h2 {
-        }
+      h2 {
+        font-size: 2rem;
+      }
 
-        section {
-          h3 {
-          }
-
-          p {
-          }
-        }
+      section > h3 {
+        font-size: 1.6rem;
       }
     }
   }
 }
 
 @media (min-width: 768px) {
-  div.main-container {
+  main {
     display: flex;
     justify-content: center;
 
-    main {
+    div.main-content {
       width: 70%;
     }
   }
