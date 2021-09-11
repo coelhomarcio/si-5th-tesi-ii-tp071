@@ -5,11 +5,21 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule }   from "./module/material/material.module";
 
-import { AppComponent } from "./app.component";
+import { AppComponent }         from "./app.component";
+import { HeaderComponent }      from "./component/header/header.component";
+import { HomeComponent }        from "./component/home/home.component";
+import { DisciplinesComponent } from "./component/disciplines/disciplines.component";
+import { GradesComponent }      from "./component/grades/grades.component";
+
+import { DisciplinesService } from "./service/disciplines.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    DisciplinesComponent,
+    GradesComponent
   ],
   imports:      [
     BrowserModule,
@@ -17,7 +27,7 @@ import { AppComponent } from "./app.component";
     AppRoutingModule,
     MaterialModule
   ],
-  providers:    [],
+  providers:    [DisciplinesService],
   bootstrap:    [AppComponent]
 })
 export class AppModule {
