@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <mat-toolbar-row class="head">
+    <h1>{{ title }}</h1>
+    <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+      <a mat-menu-item *ngFor="let navItem of navList"
+         routerLink="{{ navItem.link }}" routerLinkActive="active">
+        <span class="menu-item">{{ navItem.label }}</span>
+      </a>
+    </mat-menu>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="nav">
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let navItem of navList"
+         routerLink="{{ navItem.link }}" routerLinkActive="active">
+        <span class="nav-item">{{ navItem.label }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-toolbar-row>
+</mat-toolbar>
