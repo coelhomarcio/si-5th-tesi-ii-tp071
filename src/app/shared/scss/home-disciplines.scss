@@ -1,0 +1,50 @@
+main > div.main-content {
+  section {
+    margin: 0 9%;
+  }
+
+  section.section-classes > table {
+    width: 100%;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+
+    tbody {
+      padding: 1rem 2rem;
+      display: block;
+
+      tr {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+
+        mat-divider {
+          width: 100%;
+        }
+
+        td {
+          padding: .5rem;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          grid-gap: 1rem;
+
+          span {
+            display: flex;
+            align-items: center;
+            grid-gap: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  main > div.main-content > section.section-classes > table {
+    font-size: 1.6rem;
+    tbody {
+      width: 70%;
+    }
+  }
+}
