@@ -1,8 +1,4 @@
 main > div.main-content {
-  section {
-    margin: 0 9%;
-  }
-
   section.section-id {
     p {
       a {
@@ -20,7 +16,6 @@ main > div.main-content {
 
         mat-icon {
           font-size: 1.6rem;
-          text-indent: initial;
           transition: transform 150ms ease-in-out;
         }
       }
@@ -31,45 +26,6 @@ main > div.main-content {
 
       a:hover > mat-icon {
         transform: scale(1.2);
-      }
-    }
-  }
-
-  section.section-classes > table {
-    width: 100%;
-    font-size: 1.6rem;
-
-    tbody {
-      padding: 1rem 2rem;
-      display: block;
-
-      tr {
-        padding: 1rem 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-
-        mat-divider {
-          width: 100%;
-        }
-
-        td {
-          width: 100%;
-          padding: 1rem;
-        }
-
-        td:first-of-type {
-          max-width: 12rem;
-        }
-
-        td:nth-of-type(2) {
-          max-width: 4.5rem;
-        }
-
-        td:last-of-type {
-          max-width: 45rem;
-        }
       }
     }
   }

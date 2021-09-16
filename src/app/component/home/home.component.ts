@@ -5,7 +5,10 @@ import { DisciplinesService } from "../../service/disciplines.service";
 @Component({
   selector:    "app-home",
   templateUrl: "./home.component.html",
-  styleUrls:   ["./home.component.scss"]
+  styleUrls:   [
+    "./home.component.scss",
+    "../../shared/scss/home-disciplines.scss"
+  ]
 })
 export class HomeComponent implements OnInit {
   subTitle = "Home";
@@ -16,7 +19,7 @@ export class HomeComponent implements OnInit {
     { label: "Repositório GitHub", link: "https://github.com/coelhomarcio" }
   ];
 
-  constructor(public discipline: DisciplinesService) {
+  constructor(public disciplines: DisciplinesService) {
   }
 
   ngOnInit(): void {
