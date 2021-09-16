@@ -59,10 +59,10 @@ body {
       grid-gap: 2rem;
 
       h2,
-      section > h3 {
+      section h3 {
+        margin-left: 9%;
         font-weight: 700;
         text-transform: uppercase;
-        text-indent: 9%;
         letter-spacing: .1rem;
       }
 
@@ -70,7 +70,7 @@ body {
         font-size: 2rem;
       }
 
-      section > h3 {
+      section h3 {
         font-size: 1.6rem;
       }
     }
