@@ -1,6 +1,9 @@
 import { NgModule }                from "@angular/core";
 import { BrowserModule }           from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FormsModule }             from "@angular/forms";
+import { registerLocaleData }      from "@angular/common";
+import localePt                    from "@angular/common/locales/pt";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule }   from "./module/material/material.module";
@@ -13,6 +16,8 @@ import { GradesComponent }      from "./component/grades/grades.component";
 
 import { DisciplinesService } from "./service/disciplines.service";
 
+registerLocaleData(localePt);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +29,7 @@ import { DisciplinesService } from "./service/disciplines.service";
   imports:      [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     MaterialModule
   ],
