@@ -1,0 +1,84 @@
+main > div.main-content {
+  div.main-head {
+    display: flex;
+    align-items: center;
+    grid-gap: 2rem;
+
+    button {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  section.section-classes > table > tbody > tr > td {
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      grid-gap: 2rem;
+    }
+  }
+
+  section.section-form {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #000c;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    transition: opacity 150ms ease-in-out;
+
+    div {
+      width: 80%;
+      border-radius: .5rem;
+      padding: 2rem 1rem;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 1rem;
+
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: .5rem;
+
+        button {
+          font-size: 1.6rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: .1rem;
+        }
+      }
+
+      button {
+        width: fit-content;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        align-self: center;
+      }
+    }
+  }
+
+  section.hide {
+    opacity: 0;
+    transform: scale(0, 0);
+    transition: opacity 150ms ease-in-out, transform 0ms 150ms ease-in-out;
+  }
+}
+
+@media (min-width: 768px) {
+  main > div.main-content {
+    section.section-form {
+      div {
+        width: 50%;
+      }
+    }
+  }
+}

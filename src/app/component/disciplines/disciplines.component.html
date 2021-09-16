@@ -1,1 +1,97 @@
-<p>disciplines works!</p>
+<main>
+  <div class="main-content mat-elevation-z2">
+    <div class="main-head">
+      <h2>{{ subTitle }}</h2>
+      <button mat-mini-fab color="primary" matTooltip="Incluir"
+              (click)="showForm()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <section class="section-classes" *ngIf="disciplines.disciplines.length">
+      <h3>Detalhes</h3>
+      <table class="mat-elevation-z4">
+        <tbody>
+          <tr *ngFor="let discipline of disciplines.disciplines">
+            <mat-divider></mat-divider>
+            <td>
+              <span>
+                <mat-icon>school</mat-icon>
+                <span>{{ discipline.discipline }}</span>
+              </span>
+            </td>
+            <td>
+              <span>
+                <mat-icon>today</mat-icon>
+                <span>{{ discipline.weekday }}</span>
+              </span>
+              <span>
+                <mat-icon>schedule</mat-icon>
+                <span>{{ discipline.time }}</span>
+              </span>
+            </td>
+            <td>
+              <span>
+                <mat-icon>grade</mat-icon>
+                <span>Nota P1</span>
+                <span *ngIf="discipline.p1 !== null">{{ discipline.p1 | number : ".2-2" : "pt" }}</span>
+                <span *ngIf="discipline.p1 === null">-</span>
+              </span>
+            </td>
+            <td>
+              <span>
+                <mat-icon>grade</mat-icon>
+                <span>Nota P2</span>
+                <span *ngIf="discipline.p2 !== null">{{ discipline.p2 | number : ".2-2" : "pt" }}</span>
+                <span *ngIf="discipline.p2 === null">-</span>
+              </span>
+            </td>
+            <td>
+              <div>
+                <span>
+                  <button mat-mini-fab color="primary" matTooltip="Editar"
+                          (click)="updateDiscipline(discipline)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </span>
+                <span>
+                  <button mat-mini-fab color="primary" matTooltip="Apagar"
+                          (click)="disciplines.deleteDiscipline(discipline.id!)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </span>
+              </div>
+            </td>
+            <mat-divider></mat-divider>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section [ngClass]="isHideForm ? 'section-form hide' : 'section-form'">
+      <div>
+        <h3>{{ formTitle }}</h3>
+        <form #form="ngForm" (ngSubmit)="submitForm()">
+          <mat-form-field appearance="outline" hideRequiredMarker>
+            <mat-label>Disciplina</mat-label>
+            <input matInput type="text" [(ngModel)]="disciplineModel.discipline" name="discipline" required>
+            <mat-error>Campo obrigatório!</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" hideRequiredMarker>
+            <mat-label>Dia da semana</mat-label>
+            <mat-select [(ngModel)]="disciplineModel.weekday" name="weekday" required>
+              <mat-option value="">Selecione o dia da semana</mat-option>
+              <mat-option *ngFor="let weekday of weekdays" [value]="weekday">{{ weekday }}</mat-option>
+            </mat-select>
+            <mat-error>Campo obrigatório!</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" hideRequiredMarker>
+            <mat-label>Horário</mat-label>
+            <input matInput type="time" [(ngModel)]="disciplineModel.time" name="time" required>
+            <mat-error>Campo obrigatório!</mat-error>
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="primary">Gravar</button>
+        </form>
+        <button (click)="hideForm()" mat-raised-button color="warn">Cancelar</button>
+      </div>
+    </section>
+  </div>
+</main>
