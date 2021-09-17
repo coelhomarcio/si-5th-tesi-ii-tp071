@@ -11,7 +11,7 @@
       <h3>Detalhes</h3>
       <table class="mat-elevation-z4">
         <tbody>
-          <tr *ngFor="let discipline of disciplines.disciplines">
+          <tr *ngFor="let discipline of disciplines.disciplines" [id]="discipline.id">
             <mat-divider></mat-divider>
             <td>
               <span>
@@ -55,7 +55,7 @@
                 </span>
                 <span>
                   <button mat-mini-fab color="primary" matTooltip="Apagar"
-                          (click)="disciplines.deleteDiscipline(discipline.id!)">
+                          (click)="confirmDelete(discipline)">
                     <mat-icon>delete</mat-icon>
                   </button>
                 </span>
@@ -91,6 +91,14 @@
           <button type="submit" mat-raised-button color="primary">Gravar</button>
         </form>
         <button (click)="hideForm()" mat-raised-button color="warn">Cancelar</button>
+      </div>
+    </section>
+    <section [ngClass]="isHideConfirmDelete ? 'section-confirm-delete hide' : 'section-confirm-delete'">
+      <div>
+        <h3>Apagar</h3>
+        <p>Confirma a exclusão da disciplina "{{ disciplineModel.discipline }}"?</p>
+        <button (click)="deleteDiscipline()" mat-raised-button color="warn">Apagar</button>
+        <button (click)="hideConfirmDelete()" mat-raised-button color="primary">Cancelar</button>
       </div>
     </section>
   </div>
