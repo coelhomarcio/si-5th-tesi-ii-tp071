@@ -9,16 +9,34 @@ main > div.main-content {
     }
   }
 
-  section.section-classes > table > tbody > tr > td {
-    div {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      grid-gap: 2rem;
+  section.section-classes > table > tbody {
+    tr {
+      border-radius: .5rem;
+      transition: background-color 1000ms ease-in-out,
+      transform 500ms 1000ms ease-in-out;
+
+      td {
+        div {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          grid-gap: 2rem;
+        }
+      }
+    }
+
+    tr.highlight {
+      background-color: #c5cae9;
+    }
+
+    tr.deleting {
+      background-color: #ffcdd2;
+      transform: scale(0, 1);
     }
   }
 
-  section.section-form {
+  section.section-form,
+  section.section-confirm-delete {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -29,7 +47,7 @@ main > div.main-content {
     justify-content: center;
     align-items: center;
     position: fixed;
-    transition: opacity 150ms ease-in-out;
+    transition: opacity 300ms ease-in-out, transform 100ms ease-in-out;
 
     div {
       width: 80%;
@@ -55,8 +73,12 @@ main > div.main-content {
         }
       }
 
+      p {
+        margin-right: 9%;
+        margin-left: 9%;
+      }
+
       button {
-        width: fit-content;
         font-size: 1.6rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -69,13 +91,14 @@ main > div.main-content {
   section.hide {
     opacity: 0;
     transform: scale(0, 0);
-    transition: opacity 150ms ease-in-out, transform 0ms 150ms ease-in-out;
+    transition: opacity 100ms ease-in-out, transform 300ms ease-in-out;
   }
 }
 
 @media (min-width: 768px) {
   main > div.main-content {
-    section.section-form {
+    section.section-form,
+    section.section-confirm-delete {
       div {
         width: 50%;
       }
