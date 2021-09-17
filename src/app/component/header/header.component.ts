@@ -6,8 +6,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls:   ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  title = "Disciplinas";
-  navList = [
+  public title = "Disciplinas";
+  public navList = [
     { label: "Home", link: "home" },
     { label: "Disciplinas", link: "disciplines" },
     { label: "Notas", link: "grades" }
