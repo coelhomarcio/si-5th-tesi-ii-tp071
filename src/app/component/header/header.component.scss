@@ -28,12 +28,17 @@ mat-toolbar {
       display: flex;
       grid-gap: 9rem;
 
-      a span.nav-item {
-        color: #fff;
+      a {
+        border: .1rem dashed transparent;
+        transition: border 150ms ease-in-out;
+
+        span.nav-item {
+          color: #fff;
+        }
       }
 
       a.active {
-        border: .1rem dashed #fff;
+        border-color: #fff;
       }
     }
   }
